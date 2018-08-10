@@ -73,14 +73,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onReceive ( int what, Object extra ) {
 
-                  Log.e( TAG, "onReceive : " + what + " " + extra + " " + Thread.currentThread()
-                                                                                .getName() );
-            }
-
-            @Override
-            public void onReceive ( int what ) {
-
-                  Log.e( TAG, "onReceive : " + what + " " + Thread.currentThread().getName() );
+                  Log.e( TAG, "onReceive : "
+                      + what + " "
+                      + extra + " "
+                      + Thread.currentThread().getName()
+                  );
             }
       }
 }

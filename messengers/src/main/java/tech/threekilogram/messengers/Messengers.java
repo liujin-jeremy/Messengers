@@ -216,17 +216,13 @@ public class Messengers {
 
                         OnMessageReceiveListener listener = holder.listener.get();
                         if( listener != null ) {
+
                               Object extra = holder.extra;
-                              if( extra == null ) {
-                                    listener.onReceive( holder.what );
-                              } else {
-                                    listener.onReceive( holder.what, extra );
-                              }
+                              listener.onReceive( holder.what, extra );
+
+                              /* when holder is not null, must delete it */
+                              holderArray.delete( msg.arg1 );
                         }
-
-                        /* when holder is not null, must delete it */
-
-                        holderArray.delete( msg.arg1 );
                   }
             }
       }

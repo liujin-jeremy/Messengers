@@ -12,11 +12,4 @@ public interface OnMessageReceiveListener {
        * @param extra extra info
        */
       void onReceive ( int what, Object extra );
-
-      /**
-       * receive a message,尽量不执行复杂操作
-       *
-       * @param what signal
-       */
-      void onReceive ( int what );
 }
