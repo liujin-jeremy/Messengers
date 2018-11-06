@@ -1,4 +1,4 @@
-package tech.threekilogram.messengers.event;
+package tech.threekilogram.messengers;
 
 import android.support.v4.util.ArrayMap;
 import android.support.v4.util.ArraySet;
