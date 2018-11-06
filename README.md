@@ -2,26 +2,8 @@
 
 底层封装Handler实现通信框架
 
-## 引入
-
-**Step 1.** Add the JitPack repository to your build file
-
-Add it in your root build.gradle at the end of repositories:
-
 ```
-	allprojects {
-		repositories {
-			maven { url 'https://jitpack.io' }
-		}
-	}
-```
-
-**Step 2.** Add the dependency
-
-```
-	dependencies {
-	        implementation 'com.github.threekilogram:Messengers:1.2'
-	}
+implementation 'tech.threekilogram:messengers:2.1.1'
 ```
 
 ## 使用
