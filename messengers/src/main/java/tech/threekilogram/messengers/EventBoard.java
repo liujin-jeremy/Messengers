@@ -15,6 +15,7 @@ import java.util.Set;
  * @date: 2018-09-05
  * @time: 11:20
  */
+@SuppressWarnings("JavadocReference")
 public class EventBoard {
 
       /**

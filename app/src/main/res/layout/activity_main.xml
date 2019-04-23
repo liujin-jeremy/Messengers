@@ -106,6 +106,66 @@
           android:text="delete"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/button5"/>
+      <TextView
+          android:id="@+id/textView2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginLeft="8dp"
+          android:text="公告牌"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/button8"/>
+      <Button
+          android:id="@+id/event0"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginLeft="8dp"
+          android:text="事件 0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+      <Button
+          android:id="@+id/event1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginLeft="8dp"
+          android:text="事件 1"
+          app:layout_constraintStart_toEndOf="@+id/event0"
+          app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+      <Button
+          android:id="@+id/button12"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginLeft="8dp"
+          android:text="粘性事件0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/event0"/>
+      <Button
+          android:id="@+id/button13"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginLeft="8dp"
+          android:text="粘性事件1"
+          app:layout_constraintStart_toEndOf="@+id/button12"
+          app:layout_constraintTop_toBottomOf="@+id/event1"/>
+      <Button
+          android:id="@+id/button14"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:layout_marginStart="8dp"
+          android:layout_marginLeft="8dp"
+          android:text="注册粘性"
+          app:layout_constraintStart_toEndOf="@+id/button13"
+          app:layout_constraintTop_toBottomOf="@+id/event1"/>
 
 
 </android.support.constraint.ConstraintLayout>

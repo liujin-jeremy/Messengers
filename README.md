@@ -6,7 +6,7 @@
 implementation 'tech.threekilogram:messengers:2.1.1'
 ```
 
-## 使用
+## Messengers使用
 
 1. 实现接收消息接口
 
@@ -46,4 +46,44 @@ Messengers.send( 7, 2000, "Hello", mTestReceiver );
 
 // 携带额外消息,不同的是在Messengers线程处理
 Messengers.send( 8, 2000, "Hello", mTestReceiver );
+```
+
+
+
+## EventBoard使用
+
+事件总线
+
+```
+// 注册
+EventBoard.register( String.class, new OnNewEventListener<String>() {
+      @Override
+      public void onNewEvent ( String s ) {
+            Toast.makeText( MainActivity.this, s, Toast.LENGTH_SHORT ).show();
+            Log.i( TAG, "onNewEvent: " + s + " " + this );
+      }
+} );
+```
+
+```
+// 发送
+EventBoard.sendEvent( "Hello" );
+EventBoard.sendEvent( "World" );
+```
+
+注册粘性事件
+
+```
+EventBoard.registerSticky( String.class, new OnNewEventListener<String>() {
+      @Override
+      public void onNewEvent ( String s ) {
+            Toast.makeText( MainActivity.this, s, Toast.LENGTH_SHORT ).show();
+            Log.i( TAG, "onNewEvent: " + s + " " + this );
+      }
+} );
+```
+
+```
+// 发行粘性事件
+EventBoard.sendStickyEvent( "sticky 1" );
 ```
