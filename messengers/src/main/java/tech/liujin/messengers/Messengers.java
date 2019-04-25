@@ -23,38 +23,27 @@ public class Messengers {
       /**
        * 用来生成index
        */
-      private static final AtomicInteger MESSAGE_INDEX = new AtomicInteger();
+      private static final AtomicInteger  MESSAGE_INDEX = new AtomicInteger();
       /**
        * 使用一个{@link HandlerThread}单独处理消息
        */
-      private static ReceiveHandler sSendHandler;
+      private static       ReceiveHandler sSendHandler;
       /**
        * 使用主线程处理消息
        */
-      private static ReceiveHandler sMainHandler;
+      private static       ReceiveHandler sMainHandler;
 
       static {
 
-            /* 初始化自己 */
-            init();
-      }
-
-      /**
-       * 初始化变量
-       */
-      private static void init ( ) {
-
-            /* 防止多次初始化 */
-
-            if( sSendHandler != null && sMainHandler != null ) {
-                  return;
+            if( sSendHandler == null ) {
+                  HandlerThread thread = new HandlerThread( "Messengers" );
+                  thread.start();
+                  sSendHandler = new ReceiveHandler( thread.getLooper() );
             }
 
-            HandlerThread thread = new HandlerThread( "Messengers" );
-            thread.start();
-
-            sSendHandler = new ReceiveHandler( thread.getLooper() );
-            sMainHandler = new ReceiveHandler( Looper.getMainLooper() );
+            if( sMainHandler == null ) {
+                  sMainHandler = new ReceiveHandler( Looper.getMainLooper() );
+            }
       }
 
       /**
@@ -173,8 +162,6 @@ public class Messengers {
 
                   if( holder != null && holder.what == what && holder.listener.get() == listener ) {
                         holder.listener.clear();
-
-                        /* 不移除原因:因为线程不安全,防止正在处理消息时空指针异常,在处理消息时,会自动处理该holder */
                   }
             }
       }
@@ -213,15 +200,14 @@ public class Messengers {
                   SparseArray<Holder> holderArray = MESSAGE_HOLDER_ARRAY;
                   Holder holder = holderArray.get( msg.arg1 );
                   if( holder != null ) {
+                        /* when holder is not null, must delete it */
+                        holderArray.delete( msg.arg1 );
 
                         OnMessageReceiveListener listener = holder.listener.get();
                         if( listener != null ) {
 
                               Object extra = holder.extra;
                               listener.onReceive( holder.what, extra );
-
-                              /* when holder is not null, must delete it */
-                              holderArray.delete( msg.arg1 );
                         }
                   }
             }

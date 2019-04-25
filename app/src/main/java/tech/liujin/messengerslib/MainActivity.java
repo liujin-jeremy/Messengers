@@ -42,9 +42,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
             super.onCreate( savedInstanceState );
             setContentView( R.layout.activity_main );
-            initView();
-
             mTestReceiver = new TestReceiver();
+            initView();
       }
 
       private void initView ( ) {
@@ -74,22 +73,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                   }
             } );
             mButton = (Button) findViewById( R.id.button );
-            mButton.setOnClickListener( this );
             mButton2 = (Button) findViewById( R.id.button2 );
-            mButton2.setOnClickListener( this );
             mButton3 = (Button) findViewById( R.id.button3 );
-            mButton3.setOnClickListener( this );
             mButton4 = (Button) findViewById( R.id.button4 );
             mButton4.setOnClickListener( this );
             mTextView = (TextView) findViewById( R.id.textView );
             mButton5 = (Button) findViewById( R.id.button5 );
-            mButton5.setOnClickListener( this );
             mButton6 = (Button) findViewById( R.id.button6 );
-            mButton6.setOnClickListener( this );
             mButton7 = (Button) findViewById( R.id.button7 );
-            mButton7.setOnClickListener( this );
             mButton8 = (Button) findViewById( R.id.button8 );
-            mButton8.setOnClickListener( this );
             mTextView2 = (TextView) findViewById( R.id.textView2 );
             mButton12 = (Button) findViewById( R.id.button12 );
             mButton12.setOnClickListener( this );
