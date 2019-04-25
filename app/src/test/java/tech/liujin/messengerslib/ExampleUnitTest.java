@@ -1,4 +1,4 @@
-package tech.threekilogram.messengers;
+package tech.liujin.messengerslib;
 
 import static org.junit.Assert.assertEquals;
 

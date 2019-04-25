@@ -1,4 +1,4 @@
-package tech.threekilogram.messengerslib;
+package tech.liujin.messengerslib;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +8,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import tech.threekilogram.messengers.EventBoard;
-import tech.threekilogram.messengers.EventBoard.OnNewEventListener;
-import tech.threekilogram.messengers.Messengers;
-import tech.threekilogram.messengers.OnMessageReceiveListener;
+import tech.liujin.messengers.EventBoard;
+import tech.liujin.messengers.EventBoard.OnNewEventListener;
+import tech.liujin.messengers.Messengers;
+import tech.liujin.messengers.OnMessageReceiveListener;
 
 /**
  * @author liujin

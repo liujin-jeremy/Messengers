@@ -1,4 +1,4 @@
-package tech.threekilogram.messengers;
+package tech.liujin.messengerslib;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
             // Context of the app under test.
             Context appContext = InstrumentationRegistry.getTargetContext();
 
-            assertEquals( "tech.threekilogram.messengers.test", appContext.getPackageName() );
+            assertEquals( "tech.threekilogram.messengerslib", appContext.getPackageName() );
       }
 }
