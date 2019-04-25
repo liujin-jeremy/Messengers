@@ -3,7 +3,7 @@
 底层封装Handler实现通信框架
 
 ```
-implementation 'tech.threekilogram:messengers:2.1.1'
+implementation 'tech.liujin:messengers:1.0.0'
 ```
 
 ## Messengers使用
